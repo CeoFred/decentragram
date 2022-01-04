@@ -85,6 +85,10 @@ class App extends Component {
       this.setState({ loading: true })
       this.state.decentragram.methods.uploadImage(result[0].hash, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({ loading: false })
+      
+        //refresh window
+        window.location.reload()
+        
       })
     })
   }
